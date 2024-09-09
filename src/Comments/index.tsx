@@ -11,9 +11,9 @@ export const Comments = ({ slug, title }: CommentsProps) => {
   return (
     <Container>
       <DiscussionEmbed
-        shortname="myblog-ab5nmhtv1j"
+        shortname="nextblog-8"
         config={{
-          url: `${SITE_URL}/post/${slug}`,
+          url: `http://localhost:1337/api/post/${slug}`,
           identifier: slug,
           title: title,
           language: 'pt-BR',

@@ -26,9 +26,9 @@ export default function HomePage({ posts, category }: HomePageProps) {
           {posts.map((post) => (
             <PostCard
               key={post.id}
-              cover={post.attributes.cover.data
-                .map((element) => element.attributes.formats.small.url)
-                .toString()}
+              cover={
+                post.attributes.cover.data.attributes.formats.thumbnail.url
+              }
               slug={post.attributes.slug}
               title={post.attributes.title}
             />

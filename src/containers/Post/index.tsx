@@ -25,16 +25,14 @@ export const Post = ({ post }: PostProps) => {
         <title>{postTitle}</title>
         <meta
           name="description"
-          content={removeHtml(post.attributes.content).slice(0, 150)}
+          content={removeHtml(post.attributes.content[0].children[0].text).slice(0, 150)}
         />
       </Head>
       <Header />
       <MainContainer>
         <Heading>{post.attributes.title}</Heading>
         <PostCover
-          coverUrl={post.attributes.cover.data
-            .map((element) => element.attributes.formats.large.url)
-            .toString()}
+          coverUrl={post.attributes.cover.data.attributes.formats.thumbnail.url}
           alt={post.attributes.title}
         />
         <PostDetails
@@ -42,10 +40,14 @@ export const Post = ({ post }: PostProps) => {
           category={post.attributes.category.data.attributes.name}
           date={post.attributes.createdAt}
         />
-        <PostContainer content={post.attributes.content} />
+        <PostContainer content={post.attributes.content[0].children[0].text} />
+
         <Comments title={post.attributes.title} slug={post.attributes.slug} />
       </MainContainer>
       <Footer />
     </>
+
   );
 };
+
+

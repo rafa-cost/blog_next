@@ -11,7 +11,7 @@ export type PostDetailsProps = {
 export const PostDetails = ({ author, category, date }: PostDetailsProps) => {
   return (
     <Container>
-      Publicado em <Date date={date} /> por {author} |{' '}
+      Publicado em <Date date={date} /> por {author}, na categoria {' '}
       <Link href={`/category/${category}`}>{category}</Link>
     </Container>
   );

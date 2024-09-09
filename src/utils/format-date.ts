@@ -1,7 +1,6 @@
-export const formatDate = (date: string): string => {
+export const formatDate = (date: string) => {
   const dateObj = new Date(date);
-  dateObj.toLocaleDateString('pt-BR', {
+  return dateObj.toLocaleDateString('pt-br', {
     timeZone: 'America/Sao_Paulo',
   });
-  return dateObj.toString();
 };
